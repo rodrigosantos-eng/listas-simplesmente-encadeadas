@@ -5,9 +5,7 @@ public class App {
         listaEncadeada.inserir("Rodrigo");
         listaEncadeada.inserir("Gabriel");
         listaEncadeada.inserir("João");
-        listaEncadeada.removerUltimo();
-        listaEncadeada.removerUltimo();
-        listaEncadeada.removerUltimo();
+
         listaEncadeada.imprimeLista();
     }
 }

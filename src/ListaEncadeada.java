@@ -9,8 +9,8 @@ public class ListaEncadeada {
         celula.setElemento(elemento);
         //verifica se a lista está vazia
         if(this.inicio == null){
-            celula.setProximo(null);
             this.inicio = celula;
+            celula.setProximo(null);
         } else {
             Celula ultimo = buscarUltimo();
             ultimo.setProximo(celula);
@@ -57,11 +57,10 @@ public class ListaEncadeada {
         if(this.inicio == null){
             System.out.println("A lista está vazia");
         } else {
-            while (atual.getProximo() != null) {
+            while (atual != null) {
                 System.out.println(atual.getElemento() + "");
                 atual = atual.getProximo();
             }
-            System.out.println(atual.getElemento() + "");
         }
     }
 
@@ -76,4 +75,26 @@ public class ListaEncadeada {
             penultimo.setProximo(null);
         }
     }
+
+    public void removerElemento(String elemento){
+        Celula atual = inicio;
+        Celula anterior = null;
+
+        if(this.inicio == null){
+            System.out.println("A lista está vazia, adicione um elemento para poder remove-lô");
+        } else {
+            while (atual != null) {
+                if(atual.getElemento().equalsIgnoreCase(elemento)){
+                    if(anterior == null){
+                        this.inicio = atual.getProximo();
+                    } else {
+                        anterior.setProximo(atual.getProximo());
+                    }
+                }
+                anterior = atual;
+                atual = atual.getProximo();    
+            }
+        }
+    }
+
 }
